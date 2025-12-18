@@ -14,7 +14,7 @@ export const SocketProvider = ({ children }) => {
 
     useEffect(() => {
         // Connect to backend
-        const newSocket = io('http://localhost:3000');
+        const newSocket = io('https://quiz-battle-server.onrender.com');
         setSocket(newSocket);
 
         newSocket.on('connect', () => {
