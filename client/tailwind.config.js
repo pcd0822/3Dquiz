@@ -14,7 +14,7 @@ export default {
         background: '#F0F9FF', // Light Blue White
       },
       fontFamily: {
-        game: ['"Jua"', 'sans-serif'], // Example game-like font
+        game: ['"Jua"', 'sans-serif'],
         sans: ['"Pretendard"', 'sans-serif'],
       },
       animation: {
