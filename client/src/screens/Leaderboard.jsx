@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Avatar from './Avatar';
+import Avatar from '../components/Avatar';
 
 export default function Leaderboard({ players }) {
     // players array is expected to be sorted by rank
