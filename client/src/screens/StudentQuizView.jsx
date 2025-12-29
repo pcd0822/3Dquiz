@@ -14,7 +14,7 @@ export default function StudentQuizView({ quiz, onSubmit, answerResult }) {
     const isDescriptive = quiz.type === 'DESCRIPTIVE';
 
     return (
-        <div className="w-full max-w-2xl mx-auto p-4 flex flex-col items-center">
+        <div className="w-full min-h-screen flex flex-col items-center p-4 bg-gray-900">
             {/* Question Display */}
             <div className="bg-black/40 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_0_30px_rgba(0,255,255,0.2)] w-full mb-10 text-center border border-cyan-500/30 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
