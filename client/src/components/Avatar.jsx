@@ -42,8 +42,16 @@ export default function Avatar({ src, state = 'idle', className }) {
                 animate={state}
                 className="relative w-24 h-24 transform-style-3d"
             >
-                <div className="absolute inset-0 rounded-full border-4 border-cyan-400 box-shadow-neon bg-gray-800 flex items-center justify-center overflow-hidden">
-                    <img src={src} alt="Avatar" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 rounded-full border-4 border-cyan-400 box-shadow-neon bg-gray-800 flex items-center justify-center overflow-hidden z-10">
+                    <img
+                        src={src}
+                        alt="Avatar"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = 'https://api.dicebear.com/9.x/adventurer/svg?seed=fallback';
+                        }}
+                    />
                 </div>
                 {/* Shine effect */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/30 to-transparent pointer-events-none" />
