@@ -1,0 +1,1 @@
+@tailwind base;@tailwind components;@tailwind utilities;@layer base{body{@apply bg-background text-gray-900 overflow-hidden font-sans;}}.text-stroke{-webkit-text-stroke:1px black}.text-shadow-game{text-shadow:2px 2px 0px #000}
