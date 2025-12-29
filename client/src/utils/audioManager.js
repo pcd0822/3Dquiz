@@ -24,10 +24,22 @@ export const playSound = (type) => {
     if (!src) return;
 
     try {
-        const audio = new Audio(src); // Create new instance to allow overlapping sounds
+        const audio = new Audio(src);
         audio.volume = 0.5;
-        audio.play().catch(e => console.log("Audio play failed (interaction required):", e));
+        const playPromise = audio.play();
+
+        if (playPromise !== undefined) {
+            playPromise.catch(e => {
+                // Auto-play policy or missing file
+                // Suppress detailed error to avoid console spam for missing assets
+                if (e.name === 'NotSupportedError' || e.name === 'NotAllowedError') {
+                    // console.warn("Audio play blocked or source not found:", src); 
+                } else {
+                    console.error("Audio error:", e);
+                }
+            });
+        }
     } catch (error) {
-        console.error("Audio error:", error);
+        // console.error("Audio creation error:", error);
     }
 };
