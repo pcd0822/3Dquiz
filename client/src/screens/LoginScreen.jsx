@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function LoginScreen() {
     const [nickname, setNickname] = useState('');
-    const { joinGame, player } = useSocket();
+    const { joinGame, player, socket } = useSocket();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -32,6 +32,13 @@ export default function LoginScreen() {
                     QUIZ BATTLE
                 </h1>
 
+                {/* Connection Status Indicator */}
+                {!socket || !socket.connected ? (
+                    <div className="mb-4 text-red-500 font-bold bg-red-100 p-2 rounded-lg text-sm">
+                        ⚠️ 서버 연결 중... 잠시만 기다려주세요.
+                    </div>
+                ) : null}
+
                 <div className="mb-6">
                     <label className="block text-left font-bold text-gray-700 mb-2 ml-2">닉네임</label>
                     <input
@@ -44,7 +51,11 @@ export default function LoginScreen() {
                     />
                 </div>
 
-                <Button onClick={handleJoin} className="w-full text-2xl py-4">
+                <Button
+                    onClick={handleJoin}
+                    className="w-full text-2xl py-4"
+                    disabled={!socket || !socket.connected} // Disable if not connected
+                >
                     게임 입장! 🚀
                 </Button>
 
