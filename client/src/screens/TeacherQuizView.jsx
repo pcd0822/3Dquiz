@@ -17,7 +17,7 @@ export default function TeacherQuizView({ quiz, onNext, players, isFinished }) {
     }
 
     return (
-        <div className="w-full h-screen flex flex-col relative overflow-hidden bg-gray-900">
+        <div className="w-full h-screen flex flex-col relative overflow-hidden bg-gray-900 text-white">
             {/* Top Bar: Question */}
             <div className="bg-black/60 backdrop-blur-md p-8 border-b border-cyan-500/30 z-20 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                 <h2 className="text-5xl text-white font-bold text-center text-shadow-neon leading-tight">
