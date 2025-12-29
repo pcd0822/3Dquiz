@@ -22,7 +22,7 @@ const variants = {
     },
     frustrated: { // Overtaken
         scale: [1, 0.8, 1],
-        shake: [0, 10, -10, 0],
+        x: [-5, 5, -5, 5, 0],
         filter: ["grayscale(0%)", "grayscale(100%)", "grayscale(0%)"],
         transition: { duration: 0.5 }
     },
@@ -36,7 +36,7 @@ const variants = {
 
 export default function Avatar({ src, state = 'idle', className }) {
     return (
-        <div className={`perspective-1000 ${className}`}>
+        <div className={`perspective-1000 ${className}`} style={{ perspective: '1000px' }}>
             <motion.div
                 variants={variants}
                 animate={state}
