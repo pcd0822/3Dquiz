@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white overflow-hidden font-sans;
+    background-image:
+      radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0f0f1a 100%),
+      linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Custom effects */
+.text-stroke {
+  -webkit-text-stroke: 1px black;
+}
+
+.text-shadow-neon {
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #00f;
+}
+
+.box-shadow-neon {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), inset 0 0 15px rgba(0, 255, 255, 0.2);
+}
