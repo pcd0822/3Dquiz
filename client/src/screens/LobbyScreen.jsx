@@ -37,7 +37,7 @@ export default function LobbyScreen() {
     };
 
     return (
-        <div className="min-h-screen flex flex-col p-8 bg-gray-900">
+        <div className="min-h-screen flex flex-col p-8 bg-gray-900 text-white">
             {/* Header */}
             <header className="flex justify-between items-center mb-12">
                 <h1 className="text-6xl font-game font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 text-shadow-neon">
