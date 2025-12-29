@@ -14,7 +14,11 @@ export const SocketProvider = ({ children }) => {
 
     useEffect(() => {
         // Connect to backend
-        const newSocket = io('https://quiz-battle-server.onrender.com');
+        // Use environment variable if available, otherwise fallback to production URL or localhost
+        const serverUrl = import.meta.env.VITE_SERVER_URL || 'https://quiz-battle-server.onrender.com';
+        console.log('Connecting to server:', serverUrl);
+
+        const newSocket = io(serverUrl);
         setSocket(newSocket);
 
         newSocket.on('connect', () => {
