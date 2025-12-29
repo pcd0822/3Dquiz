@@ -22,7 +22,7 @@ export default function LoginScreen() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 bg-gray-900">
+        <div className="min-h-screen flex items-center justify-center p-4 bg-gray-900 text-white">
             <motion.div
                 initial={{ scale: 0.8, opacity: 0, rotateX: 20 }}
                 animate={{ scale: 1, opacity: 1, rotateX: 0 }}
